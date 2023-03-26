@@ -13,6 +13,7 @@ import subprocess
 import time
 from concurrent.futures import ProcessPoolExecutor as Pool
 
+
 '''
 ---  S T A R T  O F  F U N C T I O N  F I L E 2 S Q L  ---
 
@@ -86,7 +87,7 @@ def worker(file_i):
 
     # Get file without .avi extension
     name, ext = os.path.splitext(file_i)
-    name = os.path.join(*(name.split(os.path.sep)[1:]))
+    name = os.path.join(*(name.split(os.path.sep)[2:]))
 
     # Create destination directory for video
     dst_directory_path = os.path.join(dst_dir, name)
@@ -137,20 +138,20 @@ def create_db(filename):
     cursor.execute("CREATE TABLE Images(ObjId STRING, frames BLOB, size INT)")
     db.commit()
     db.close()
-
 '''
 ---  E N D  O F  F U N C T I O N  C R E A T E _ D B  ---
 '''
+
 
 if __name__ == '__main__':
 
     start = time.time()
     #SQLITE
-    base_dir = 'UCF-101-test'
-    dst_dir = 'UCF-101-test'
+    base_dir = 'data/UCF-101-DB_video'
+    dst_dir = 'data/UCF-101-DB_video'
 
     #--- Extract files from folder following pattern
-    files   = glob.glob(base_dir+"*/*.avi")
+    files   = glob.glob(base_dir+"*/*/*.avi")
     n_files = len(files)
     print('Number of files in folder: ', n_files)
 
