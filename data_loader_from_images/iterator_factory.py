@@ -10,11 +10,11 @@ import numpy as np
 import imgaug.augmenters as iaa
 import torch.multiprocessing as mp
 from torch.nn import functional as F
-import data_loader.video_transform as transforms
-import data_loader.video_iterator as video_iterator 
-from data_loader.video_iterator import VideoIter
+import data_loader_from_images.video_transform as transforms
+import data_loader_from_images.video_iterator as video_iterator 
+from data_loader_from_images.video_iterator import VideoIter
 from torch.utils.data.sampler import RandomSampler
-import data_loader.video_sampler as sampler
+import data_loader_from_images.video_sampler as sampler
 
 def get_data(cfg):
 

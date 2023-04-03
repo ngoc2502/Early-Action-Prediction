@@ -8,7 +8,7 @@ _C = CN()
 # _C.DATA.labels_dir = os.path.join('mydata','UCF-101-testcsv')
 _C.DATA = CN()
 
-_C.DATA.DATA_DIR = 'UCF-101-test'
+_C.DATA.DATA_DIR = 'UCF-101-resnet'
 _C.DATA.LABELS_DIR = 'UCF-101-testcsv'
 _C.DATA.EVAL_ONLY = False
 
